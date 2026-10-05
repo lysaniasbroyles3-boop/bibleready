@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verse Up One</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>VERSE UP ONE</h1>
+    <p>Grow in God's Word • One Verse at a Time</p>
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('study')">📖 Study</button>
+    <button onclick="showPage('lookup')">🔎 Verse Lookup</button>
+    <button onclick="showPage('review')">📝 Review</button>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <div class="card">
+      <h2>📖 Daily Verse</h2>
+
+      <div class="verse">
+        <p id="dailyVerse">
+          "The Lord is my shepherd; I shall not want."
+        </p>
+
+        <strong>Psalm 23:1</strong>
+      </div>
+
+      <div class="stats">
+        <div>
+          <span id="level">1</span>
+          <small>LEVEL</small>
+        </div>
+
+        <div>
+          <span id="xp">0</span>
+          <small>XP</small>
+        </div>
+      </div>
+
+      <button class="mainButton" onclick="showPage('study')">
+        START TODAY'S STUDY
+      </button>
+    </div>
+  </section>
+
+  <!-- STUDY -->
+  <section id="study" class="page">
+
+    <div class="card">
+      <h2>📚 Today's Study</h2>
+
+      <div class="lesson">
+        <h3>Psalm 23:1</h3>
+
+        <p>
+          "The Lord is my shepherd; I shall not want."
+        </p>
+
+        <p>
+          This verse reminds us that God cares for His people
+          and provides what they need.
+        </p>
+      </div>
+
+      <h3>Question 1</h3>
+      <p>Who does the verse describe as our shepherd?</p>
+
+      <button class="answer" onclick="answerQuestion(this, true)">
+        God
+      </button>
+
+      <button class="answer" onclick="answerQuestion(this, false)">
+        A king
+      </button>
+
+      <button class="answer" onclick="answerQuestion(this, false)">
+        A soldier
+      </button>
+
+      <p id="questionResult"></p>
+
+      <button
+        id="completeButton"
+        class="mainButton"
+        onclick="completeStudy()"
+        disabled>
+        COMPLETE STUDY
+      </button>
+
+    </div>
+  </section>
+
+  <!-- LOOKUP -->
+  <section id="lookup" class="page">
+
+    <div class="card">
+
+      <h2>🔎 Bible Verse Lookup</h2>
+
+      <p>Enter a book, chapter, and verse.</p>
+
+      <input
+        id="bookInput"
+        type="text"
+        placeholder="Book (example: John)"
+      >
+
+      <input
+        id="chapterInput"
+        type="number"
+        placeholder="Chapter"
+      >
+
+      <input
+        id="verseInput"
+        type="number"
+        placeholder="Verse"
+      >
+
+      <button class="mainButton" onclick="lookupVerse()">
+        LOOK UP VERSE
+      </button>
+
+      <div id="lookupResult" class="lookupResult"></div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section id="review" class="page">
+
+    <div class="card">
+
+      <h2>📝 Study Review</h2>
+
+      <div id="reviewContent">
+        <p>
+          Complete today's study to unlock your review.
+        </p>
+      </div>
+
+      <button class="mainButton" onclick="showPage('home')">
+        BACK HOME
+      </button>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
